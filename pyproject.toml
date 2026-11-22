@@ -8,6 +8,7 @@ version = "0.1.0"
 description = "A plain-language public security check for small organizations' email and websites"
 readme = "checkup/README.md"
 requires-python = ">=3.10"
+license = {text = "MIT"}
 dependencies = ["dnspython>=2.4"]
 
 [project.optional-dependencies]

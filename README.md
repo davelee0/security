@@ -82,5 +82,6 @@ General guidance only, not a security assessment of your organization.
 
 ## License
 
-This work is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
-See [LICENSE](LICENSE).
+The written guidance is licensed under
+[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/); the code is
+licensed under the [MIT License](LICENSE-CODE). See [LICENSE](LICENSE).
