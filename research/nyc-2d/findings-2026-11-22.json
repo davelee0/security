@@ -1,0 +1,115 @@
+{
+ "as_of": "2026-11-22",
+ "entries": 972,
+ "entries_by_kind": {
+  "commercial vendor": 542,
+  "community organization / nonprofit": 238,
+  "other": 16,
+  "related services provider": 95,
+  "research": 81
+ },
+ "encryption": {
+  "chose_identical_prewritten_sentence": 930,
+  "pct": 95.7
+ },
+ "contradictions": {
+  "paper_storage": 21,
+  "paper_storage_but_affirm_encryption_at_rest": 19,
+  "say_no_subcontractors": 190,
+  "say_no_subcontractors_but_name_third_party_hosting": 26,
+  "same_where_form_explicitly_counts_cloud_as_subcontractor": 2,
+  "store_nothing_but_affirm_encryption_at_rest": 40
+ },
+ "terms": {
+  "with_parseable_end_date": 368,
+  "end_date_already_passed": 203,
+  "pct_of_dated": 55.2,
+  "passed_by_more_than_2_years": 87
+ },
+ "ai": {
+  "entries_mentioning_ai_anywhere": 53,
+  "note": "The published form has no dedicated AI question; mentions come from free text."
+ },
+ "notes": [
+  "Mention rates measure what the free-text safeguards answer says, not what a vendor does.",
+  "Research-page entries share DOE-prefilled safeguards text, which inflates their mention rates.",
+  "An end date in the past may mean an ended agreement or a disclosure that was never updated."
+ ],
+ "by_kind": {
+  "commercial vendor": {
+   "entries": 542,
+   "median_safeguards_chars": 960,
+   "mentions_pct": {
+    "multi_factor_auth": 29.5,
+    "soc2": 11.3,
+    "iso27001": 10.5,
+    "penetration_test": 14.0,
+    "nist": 12.2,
+    "incident_response": 19.6,
+    "least_privilege_or_rbac": 31.0,
+    "training": 48.9,
+    "ai": 2.6
+   }
+  },
+  "community organization / nonprofit": {
+   "entries": 238,
+   "median_safeguards_chars": 934,
+   "mentions_pct": {
+    "multi_factor_auth": 30.7,
+    "soc2": 2.1,
+    "iso27001": 0.4,
+    "penetration_test": 2.9,
+    "nist": 5.5,
+    "incident_response": 21.4,
+    "least_privilege_or_rbac": 15.1,
+    "training": 48.3,
+    "ai": 0.0
+   }
+  },
+  "other": {
+   "entries": 16,
+   "median_safeguards_chars": 599,
+   "mentions_pct": {
+    "multi_factor_auth": 37.5,
+    "soc2": 6.2,
+    "iso27001": 6.2,
+    "penetration_test": 0.0,
+    "nist": 0.0,
+    "incident_response": 18.8,
+    "least_privilege_or_rbac": 18.8,
+    "training": 43.8,
+    "ai": 0.0
+   }
+  },
+  "related services provider": {
+   "entries": 95,
+   "median_safeguards_chars": 862,
+   "mentions_pct": {
+    "multi_factor_auth": 23.2,
+    "soc2": 0.0,
+    "iso27001": 1.1,
+    "penetration_test": 2.1,
+    "nist": 3.2,
+    "incident_response": 14.7,
+    "least_privilege_or_rbac": 10.5,
+    "training": 50.5,
+    "ai": 0.0
+   }
+  },
+  "research": {
+   "entries": 81,
+   "median_safeguards_chars": 650,
+   "mentions_pct": {
+    "multi_factor_auth": 6.2,
+    "soc2": 1.2,
+    "iso27001": 1.2,
+    "penetration_test": 2.5,
+    "nist": 4.9,
+    "incident_response": 87.7,
+    "least_privilege_or_rbac": 4.9,
+    "training": 9.9,
+    "ai": 0.0
+   }
+  }
+ }
+}
