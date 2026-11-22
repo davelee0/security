@@ -53,11 +53,28 @@ No technical background needed.
       who can help with a breach.
 - [ ] Know how to reset passwords and sign everyone out of email.
 
+## Check your own domain
+
+[`checkup`](checkup/README.md) looks at your domain's public email and
+website settings and tells you, in plain language, what to fix first.
+It reads only public information.
+
+```
+python -m checkup yourparish.org
+```
+
 ## Roadmap
+
+See [docs/DIRECTION.md](docs/DIRECTION.md) for the reasoning behind
+these priorities.
+
+- [x] A self-assessment script for checking your own domain's email and
+      website settings ([checkup](checkup/README.md))
+- [ ] "Your first hour" guides for Google Workspace and Microsoft 365
+- [ ] A one-page "something's wrong" plan
+- [ ] Questions to ask before putting children's data in an app
+- [ ] A read-only Workspace / Microsoft 365 check (MFA, admins, sharing)
 - [ ] A one-page printable version
-- [ ] Short how-to guides for each item
-- [ ] A self-assessment script for checking your own domain's email and
-      website settings
 
 ## Disclaimer
 
@@ -65,5 +82,6 @@ General guidance only, not a security assessment of your organization.
 
 ## License
 
-This work is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
-See [LICENSE](LICENSE).
+The written guidance is licensed under
+[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/); the code is
+licensed under the [MIT License](LICENSE-CODE). See [LICENSE](LICENSE).
