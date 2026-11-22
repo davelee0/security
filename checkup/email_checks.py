@@ -238,14 +238,27 @@ def parse_tags(record: str) -> dict[str, str]:
     return tags
 
 
+def _dmarc_records(name: str, resolver: Resolver) -> list[str]:
+    return [t.strip() for t in resolver.txt(f"_dmarc.{name}")
+            if t.strip().lower().startswith("v=dmarc1")]
+
+
 def check_dmarc(domain: str, resolver: Resolver) -> list[Finding]:
     try:
-        txts = resolver.txt(f"_dmarc.{domain}")
+        records = _dmarc_records(domain, resolver)
+        # A subdomain (school.stmarys.org) is covered by its parent's DMARC
+        # record (stmarys.org) when it has none of its own (RFC 7489 6.6.3).
+        # Walk up, stopping at two labels. That's a simplification: for
+        # names like stmarys.org.uk it stops one level early, which can only
+        # cause a missed inheritance, never a false "protected".
+        labels = domain.split(".")
+        for i in range(1, len(labels) - 1):
+            if records:
+                break
+            records = _dmarc_records(".".join(labels[i:]), resolver)
     except LookupFailed:
         return [Finding("dmarc.error", AREA, Severity.UNKNOWN,
                         "Couldn't look up your DMARC record.")]
-
-    records = [t.strip() for t in txts if t.strip().lower().startswith("v=dmarc1")]
     if not records:
         return [Finding(
             "dmarc.missing", AREA, Severity.FIX_FIRST,

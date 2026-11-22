@@ -168,3 +168,17 @@ def test_nonexistent_domain_stops_instead_of_false_alarms():
     findings = run_email_checks(D, FakeResolver(nonexistent={D}))
     assert ids(findings) == {"dns.no_domain"}
     assert findings[0].severity is Severity.UNKNOWN
+
+
+def test_subdomain_inherits_parent_dmarc():
+    sub = "school.stmarys.org"
+    r = FakeResolver(txt={f"_dmarc.{D}": ["v=DMARC1; p=reject; rua=mailto:a@stmarys.org"]})
+    assert "dmarc.enforced" in ids(run_email_checks(sub, r))
+    assert "dmarc.missing" not in ids(run_email_checks(sub, r))
+
+
+def test_subdomain_own_dmarc_wins_over_parent():
+    sub = "school.stmarys.org"
+    r = FakeResolver(txt={f"_dmarc.{sub}": ["v=DMARC1; p=none; rua=mailto:a@stmarys.org"],
+                          f"_dmarc.{D}": ["v=DMARC1; p=reject"]})
+    assert "dmarc.p_none" in ids(run_email_checks(sub, r))
