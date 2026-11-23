@@ -53,6 +53,12 @@ No technical background needed.
       who can help with a breach.
 - [ ] Know how to reset passwords and sign everyone out of email.
 
+## Start here
+
+If you use Google Workspace, follow
+[Your first hour: Google Workspace](docs/guides/google-workspace-first-hour.md):
+five steps, in order, with exactly where to click.
+
 ## Check your own domain
 
 [`checkup`](checkup/README.md) looks at your domain's public email and
@@ -70,7 +76,8 @@ these priorities.
 
 - [x] A self-assessment script for checking your own domain's email and
       website settings ([checkup](checkup/README.md))
-- [ ] "Your first hour" guides for Google Workspace and Microsoft 365
+- [x] ["Your first hour" for Google Workspace](docs/guides/google-workspace-first-hour.md)
+- [ ] "Your first hour" for Microsoft 365
 - [ ] A one-page "something's wrong" plan
 - [ ] Questions to ask before putting children's data in an app
 - [ ] A read-only Workspace / Microsoft 365 check (MFA, admins, sharing)
