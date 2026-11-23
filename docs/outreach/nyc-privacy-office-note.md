@@ -1,45 +1,38 @@
-# Draft note to NYC Public Schools' student privacy office
+# Note to NYC Public Schools' student privacy office
 
 > **Status: saved as a Gmail draft, not sent.** Recipient address as published on
-> the disclosure pages: studentprivacy@schools.nyc.gov
+> the disclosure pages: studentprivacy@schools.nyc.gov. The private list of 240
+> entries it offers is kept out of this public repository; it can be regenerated
+> with `research/nyc-2d/` if the office asks for it.
 
 ---
 
 **To:** studentprivacy@schools.nyc.gov
-**Subject:** Outdated Illuminate Education entry on the Ed Law 2-d disclosure page
+**Subject:** Outdated Illuminate entry on your Ed Law 2-d page, and 240 others to review
 
 Hello,
 
-I volunteer on student data protection, and I've been reading the
-supplemental information NYC Public Schools publishes for parents under
-Education Law §2-d. Thank you for maintaining it; New York's transparency
-here is ahead of most of the country.
+Thank you for publishing the Ed Law §2-d supplemental information. New York's
+transparency here leads the country.
 
-I wanted to flag one entry that may mislead parents. On the "Vendors I–Q"
-page, the Illuminate Education entry still states: "Data is encrypted at
-both rest and in transfer in accordance with NIST Cybersecurity Framework
-requirements." As your office knows, schools were directed to stop using
-Illuminate products in 2022. The 2025 settlement with the Attorney General
-and the State Education Department, and the FTC's proposed consent order,
-concern Illuminate's failure to protect student data; the FTC alleges it
-stored data unencrypted. You may want to remove, update or annotate the
-entry.
+One entry may mislead parents. On "Vendors I–Q," Illuminate Education still
+says its data "is encrypted at both rest and in transfer." Schools stopped
+using Illuminate in 2022, and the FTC alleges it stored student data
+unencrypted. It may be worth removing or annotating.
 
-Separately, I published a short aggregate analysis of all 972 entries on
-those pages, in case it's useful to your office:
-https://github.com/davelee0/security/tree/main/research/nyc-2d
+I reviewed all 972 entries and can privately send your office a list of 240
+specific ones that may need attention:
+- 203 whose agreement end dates have passed (87 by more than two years)
+- 45 whose answers contradict themselves, such as paper records described as
+  "encrypted at rest," or "no subcontractors" alongside a named cloud host
 
-A few patterns it found:
-- About 55% of entries with an end date show a date that has passed.
-- Some entries contradict themselves. Examples are paper storage alongside
-  an affirmation that all data is encrypted at rest, and "no
-  subcontractors" alongside a named cloud host.
-- The form has no question about AI use, though the March 2026 AI guidance
-  says AI disclosures are published.
+(Some entries fall in both groups.)
 
-The analysis names no organization other than Illuminate, and it reads only
-the public pages. I'd be glad to share the method or adjust anything that
-seems unfair or inaccurate.
+The method and aggregate results are public and name no organization:
+https://github.com/davelee0/security/tree/main/research/nyc-2d. The same checks
+could run automatically before new entries are posted.
 
-With thanks,
+Would the list be useful?
+
+Thanks,
 Dave
