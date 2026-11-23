@@ -1,0 +1,6 @@
+Kind,Name,What it can reach,How it gets in,Protection,Always on?,Do we see when it's used?,Still needed?,Owner here,Last reviewed
+Person,Example: Office manager (admin),Google Workspace: all email and drives,Admin login,Passkey,Yes,Yes (admin log),Yes,Principal,2026-11-23
+Vendor support,Example: Student information system vendor,All student records,Vendor support portal,Unknown,Unknown,Unknown,Yes,Business manager,
+IT provider,Example: Local IT firm,Office computers,Remote-access tool,Unknown,Yes,No,Yes,Business manager,
+App or integration,Example: Rostering sync,Student names and classes,App permission,n/a,Yes,Unknown,Review,Office manager,
+Device,Example: Camera recorder,Classroom video,Network,Unknown (installer default?),Yes,No,Yes,Facilities,

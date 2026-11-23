@@ -12,6 +12,7 @@ python -m checkup stmarys.org
 | Area | Check | Why it matters |
 |---|---|---|
 | Email | **DMARC** record and policy | Stops scammers sending email that looks like it's from you |
+| Email | DMARC **subdomain policy** (`sp=`) | A weak subdomain policy lets scammers use addresses like billing.yourdomain |
 | Email | **SPF** record: exactly one, sensible ending, under 10 lookups | Lists who may send your email; broken SPF silently stops working |
 | Email | **DKIM** signing (Google Workspace / Microsoft 365) | A digital signature on your email; off by default in Google Workspace |
 | Email | Which **provider** handles your email | So the advice can give the exact steps for your provider |

@@ -302,6 +302,19 @@ def check_dmarc(domain: str, resolver: Resolver) -> list[Finding]:
                 f"DMARC applies to only {pct}% of failing email (pct={pct}).",
                 fix="Raise pct to 100 when you're comfortable.",
             ))
+        # sp= sets the policy for subdomains. If it's weaker than p=, a
+        # scammer can send as billing.yourdomain.org even though the main
+        # domain is protected.
+        sub = tags.get("sp", "").lower()
+        if sub == "none":
+            findings.append(Finding(
+                "dmarc.subdomains_open", AREA, Severity.WORTH_DOING,
+                "Your subdomains aren't protected (sp=none): fake email from addresses "
+                "like billing.yourdomain still gets delivered.",
+                why="Payment scams often use a believable subdomain because the "
+                    "main domain is protected.",
+                fix=f"Remove sp=none from your DMARC record, or change it to sp={policy}.",
+            ))
 
     if "rua" not in tags:
         findings.append(Finding(
