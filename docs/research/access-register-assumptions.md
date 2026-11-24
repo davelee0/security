@@ -124,7 +124,9 @@ from public information. Two ways to test it before a full pilot:
 1. **Public-documentation baseline:** for 8–10 vendors common in small
    schools, childcare and parishes, record what their public security or trust
    pages already say about the four questions. Cheap, and shows how often the
-   answer is "not stated."
+   answer is "not stated." **Done:** [vendor-support-access-baseline.md](vendor-support-access-baseline.md)
+   found none of eight vendors states any of the four controls for its own
+   staff.
 2. **A small real send:** an organization that already uses a vendor sends the
    questionnaire to 3–5 of them, and we record response rates and quality.
    This needs a willing organization, so it's the first step of a pilot.
