@@ -23,7 +23,9 @@ Allow one afternoon for Part 1 and one staff meeting for Part 2.
 Phishing kits now put a fake login page between the user and the real site.
 The user types their password and code, the kit passes both through in real
 time, and the attacker keeps the logged-in session. In Sudbury,
-Massachusetts (2025), attackers did exactly this and redirected payroll.
+Massachusetts (2025), attackers phished school payroll staff, could
+intercept their MFA codes, and redirected four employees' paychecks
+([Sudbury Weekly](https://sudburyweekly.com/sps-hit-by-payroll-cyberattack-in-2025-over-12000-diverted/)).
 
 **Passkeys and hardware security keys stop this.** The key checks which
 website it's talking to, so a fake site gets nothing it can use. Text-message
@@ -34,7 +36,11 @@ codes, voice calls and app prompts don't have that check.
 - The list of money-movers and admins (usually 2–5 names).
 - For each person, either a phone or computer that supports passkeys, or a
   hardware security key. Buy **two keys per person** (one daily, one locked
-  away as a spare). Keys that support FIDO2 typically cost $25–$50 each.
+  away as a spare). Keys that support FIDO2 cost about $30 each ($29 for
+  Yubico's Security Key series, $30–$35 for Google's Titan).
+
+For screen-by-screen steps, recovery planning and what keys don't stop, see
+the [passkey guide for money-movers](../guides/passkeys-for-money-movers.md).
 
 ### Google Workspace
 
@@ -46,8 +52,13 @@ codes, voice calls and app prompts don't have that check.
    verification. For the money-movers' group, set the allowed method to
    **Only security key**. This option accepts passkeys as well as hardware
    keys. ([Google: Deploy 2-Step Verification](https://support.google.com/a/answer/9176657))
-4. **Generate backup codes for each person and lock them away.** Under "Only
-   security key," users can't create their own backup codes; an admin has to.
+4. **Plan for a lost key.** Under "Only security key," users can't create
+   their own backup codes. If someone loses both keys, an admin generates a
+   backup code for them at that moment (Directory → Users → the user →
+   Security → 2-step verification → Get Backup Verification Codes); Google
+   says it works during the grace period you set. Keep two super admins so
+   they can recover each other.
+   ([Google: Recover an account](https://knowledge.workspace.google.com/admin/security/recover-an-account-protected-by-2-step-verification))
 5. Optional: let them **skip the password** and sign in with the passkey
    alone. Admin console → Security → Authentication → Passwordless.
    ([Google: Allow users to skip passwords](https://support.google.com/a/answer/13529161))
@@ -71,11 +82,18 @@ codes, voice calls and app prompts don't have that check.
    Then create a Conditional Access policy that requires the built-in
    **Phishing-resistant MFA** authentication strength for that group.
    ([Microsoft: Authentication strengths](https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-strengths))
+   Two cautions: Conditional Access can't run alongside security defaults,
+   so if you turn security defaults off, add a policy requiring MFA for
+   everyone else too. And create two emergency admin accounts, excluded
+   from the policy, before you switch it on.
 
-Microsoft has signaled it will retire text-message and voice codes as
-Microsoft-managed MFA methods; one industry analysis puts the date at
-February 1, 2027. Check Microsoft's current announcements, but moving the
-money-movers now gets ahead of it either way.
+Microsoft is retiring the text-message and voice codes it delivers itself.
+**From February 1, 2027** they stop for most users, and anyone whose only
+method is text or voice must register a passkey at sign-in; **from July 1,
+2027** the same applies to Global Administrators and outside users. This
+covers sign-in and self-service password reset in Microsoft's public cloud.
+([Microsoft: SMS and voice retirement](https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sms-voice-retirement))
+Moving the money-movers to keys now gets ahead of it.
 
 ### Check that it worked
 
@@ -90,14 +108,16 @@ money-movers now gets ahead of it either way.
 ## Part 2. The payment-change rule
 
 Adopt this as a written rule, signed by whoever approves payments. Post it
-where the bookkeeper works.
+where the bookkeeper works. A printable one-page version, with a letter to
+send vendors and questions for your bank, is in the
+[payment-change check](payment-change-check.md).
 
 > **Any request to change where we send money is treated as possible fraud
 > until confirmed.** This includes a vendor's new bank account, an employee's
 > new direct-deposit account, or an "urgent" payment request from a leader.
 >
-> 1. **Hold.** No change or urgent payment takes effect the day it's
->    requested.
+> 1. **Hold for at least 48 hours.** No change or urgent payment takes
+>    effect the day it's requested.
 > 2. **Call back** on a phone number we already have on file. Never use a
 >    number, link or contact given in the request itself.
 > 3. **Use the code word.** For our own staff and leaders, the caller must
@@ -171,13 +191,17 @@ Keep each round under five exchanges.
 The drill only practices the script. It never touches real accounts, and it
 shouldn't be given real names, account numbers or the actual code word.
 
+For a longer version with three scenarios (including pressure from "the
+boss") and a 10-point scorecard, use the
+[payment-change drill](payment-change-drill.md).
+
 ---
 
 ## One-page checklist
 
 - [ ] Money-movers and admins listed (2–5 people)
 - [ ] Two passkeys or keys per person, spare locked away
-- [ ] Google: "Only security key" for their group, backup codes stored
+- [ ] Google: "Only security key" for their group, two super admins
 - [ ] Microsoft: passkeys on, SMS and voice off for their group; Conditional
       Access with phishing-resistant strength (Business Premium for them only)
 - [ ] Payment-change rule signed and posted

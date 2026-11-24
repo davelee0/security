@@ -63,6 +63,9 @@ five steps, in order, with exactly where to click.
 
 - [Money-movers kit](docs/kits/money-movers.md): phishing-proof sign-in for the
   people who handle money, a payment-change rule, and a 10-minute practice drill.
+  Deeper companions: the [passkey guide](docs/guides/passkeys-for-money-movers.md),
+  the printable [payment-change check](docs/kits/payment-change-check.md) with a
+  vendor letter, and the [payment-change drill](docs/kits/payment-change-drill.md).
 - [Breach-day kit](docs/kits/breach-day-kit.md): who to call, first-hour steps,
   saving evidence, and letters to families.
 - [Access register](docs/kits/access-register.md): list every way into your
