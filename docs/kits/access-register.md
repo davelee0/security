@@ -80,8 +80,21 @@ Columns:
 - **Vendors:** your contracts and invoices. Anyone you pay who holds student
   or family data belongs on the list.
 
-A planned read-only account checker will fill the person and app rows
-automatically for Google Workspace and Microsoft 365.
+A planned read-only account checker will fill most person and app rows
+automatically for Google Workspace and Microsoft 365. Two limits: on Google,
+a read-only tool can only rebuild the connected-apps list from about six
+months of audit logs; on Microsoft, spotting stale admins automatically needs
+the paid P1 license. Vendor, IT-provider and device rows always need a
+person. ([Details](../research/access-register-assumptions.md#4-the-rows-can-be-filled-in-with-two-gaps))
+
+### Google and Microsoft themselves
+
+Google's and Microsoft's own support staff can also reach your data in rare
+cases. Both offer approval-before-access controls (Google's Access Approvals,
+Microsoft's Customer Lockbox), but only on their top tiers or as paid
+add-ons, which most small organizations don't have. Add one row for each
+platform you use, mark it "always on, can't change on our plan," and move on:
+it isn't a gap you can fix, but it belongs on the list.
 
 ---
 
@@ -110,10 +123,18 @@ questions, each with an answer you can check.
 >    and how long do you keep it?
 >
 > We'd also appreciate the date of your most recent independent security
-> assessment (for example, a SOC 2 Type II report) and what it covered.
+> assessment (for example, a SOC 2 Type II report) and what it covered. If our
+> agreement uses the National Data Privacy Agreement, please send the annual
+> security audit report described in its section 5.2.
 >
 > Thank you,
 > [Name], [role], [organization]
+
+**Is this a reasonable ask?** Yes. Mainstream platforms already work this
+way: Salesforce, for example, lets customers grant support staff access for a
+set period and revoke it at any time. In New York City's 890 published vendor
+disclosures, only 3 describe how support staff reach customer data at all, so
+most vendors have simply never been asked.
 
 **How to read the answers:**
 
@@ -129,7 +150,13 @@ questions, each with an answer you can check.
 ## Part 3. Contract wording
 
 Ask for this as an addendum at the next renewal. It turns the four questions
-into commitments.
+into commitments, and it adds to your existing data agreement rather than
+replacing it. The standard National Data Privacy Agreement (version 2.2)
+already requires vendor employees to sign confidentiality agreements
+(section 4.3), an annual security audit (section 5.2) and a recognized
+security framework (section 5.3). It says nothing about how vendor staff sign
+in, whether you approve their access, time limits, logs you can see, or how
+fast departing staff lose access. This addendum covers exactly those gaps.
 
 > **Support access to Customer Data.**
 >
