@@ -59,6 +59,15 @@ If you use Google Workspace, follow
 [Your first hour: Google Workspace](docs/guides/google-workspace-first-hour.md):
 five steps, in order, with exactly where to click.
 
+## Ready-to-use kits
+
+- [Money-movers kit](docs/kits/money-movers.md): phishing-proof sign-in for the
+  people who handle money, a payment-change rule, and a 10-minute practice drill.
+- [Breach-day kit](docs/kits/breach-day-kit.md): who to call, first-hour steps,
+  saving evidence, and letters to families.
+- [Access register](docs/kits/access-register.md): list every way into your
+  children's data, plus vendor questions and contract wording.
+
 ## Check your own domain
 
 [`checkup`](checkup/README.md) looks at your domain's public email and

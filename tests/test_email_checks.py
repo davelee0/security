@@ -182,3 +182,17 @@ def test_subdomain_own_dmarc_wins_over_parent():
     r = FakeResolver(txt={f"_dmarc.{sub}": ["v=DMARC1; p=none; rua=mailto:a@stmarys.org"],
                           f"_dmarc.{D}": ["v=DMARC1; p=reject"]})
     assert "dmarc.p_none" in ids(run_email_checks(sub, r))
+
+
+def test_open_subdomain_policy_is_flagged():
+    r = FakeResolver(mx=GOOGLE_MX,
+                     txt={f"_dmarc.{D}": ["v=DMARC1; p=reject; sp=none; rua=mailto:a@stmarys.org"]})
+    f = by_id(run_email_checks(D, r), "dmarc.subdomains_open")
+    assert f.severity is Severity.WORTH_DOING
+    assert "sp=reject" in f.fix
+
+
+def test_matching_subdomain_policy_is_fine():
+    r = FakeResolver(mx=GOOGLE_MX,
+                     txt={f"_dmarc.{D}": ["v=DMARC1; p=quarantine; sp=quarantine; rua=mailto:a@stmarys.org"]})
+    assert "dmarc.subdomains_open" not in ids(run_email_checks(D, r))
